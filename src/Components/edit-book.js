@@ -14,7 +14,7 @@ export default function EditBook() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/books/${id}`)
+      .get(`https://mern-mongodb-backend.oprahh.repl.co/books/${id}`)
       .then((response) => {
         setName(response.data.name);
         setAuthor(response.data.author);
@@ -35,10 +35,10 @@ export default function EditBook() {
       published: published,
     };
     console.log(book_var);
-    console.log(`http://localhost:5000/books/update/${id}`);
+    console.log(`https://mern-mongodb-backend.oprahh.repl.co/books/update/${id}`);
 
     axios
-      .post(`http://localhost:5000/books/update/${id}`, book_var)
+      .post(`https://mern-mongodb-backend.oprahh.repl.co/books/update/${id}`, book_var)
       .then((res) => {
         window.location = "/";
       });

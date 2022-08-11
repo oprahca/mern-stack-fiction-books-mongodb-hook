@@ -28,7 +28,7 @@ export default function BookList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/books/")
+      .get("https://mern-mongodb-backend.oprahh.repl.co/books")
       .then((res) => {
         setBookList(res.data);
       })
@@ -41,7 +41,7 @@ export default function BookList() {
 
   const deleteBook = (id) => {
     axios
-      .delete('http://localhost:5000/books/delete/'+id)
+      .delete('https://mern-mongodb-backend.oprahh.repl.co/books/delete/'+id)
       .then((res) => console.log("Deleted:" + res.data))
 
     setBookList(book.filter((el) => el._id !== id));
